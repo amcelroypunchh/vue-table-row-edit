@@ -8,12 +8,14 @@ const components = [
   XtTableColumn
 ];
 if (!global._babelPolyfill) {
-  require('idempotent-babel-polyfill');
+  require("idempotent-babel-polyfill");
 }
 
 const install = function (Vue, options = {}) {
   /* istanbul ignore if */
-  if (install.installed) { return; }
+  if (install.installed) {
+    return;
+  }
   components.map((component) => {
     Vue.component(component.name, component);
   });
