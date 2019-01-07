@@ -22,9 +22,7 @@ const createLintingRule = () => ({
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    app: ["idempotent-babel-polyfill", process.env.NODE_ENV === 'production'
-      ? './src/index.js'
-      : './demo/main.js']
+    app: ['./src/index.js']
   },
   output: {
     path: config.build.assetsRoot,
