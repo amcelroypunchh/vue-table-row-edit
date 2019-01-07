@@ -4,14 +4,17 @@ import XtTableColumn from "./components/xt-table-column";
 
 const components = [
   XtInputNumber,
-	XtTable,
+  XtTable,
   XtTableColumn
 ];
+if (!global._babelPolyfill) {
+  require('idempotent-babel-polyfill');
+}
 
 const install = function (Vue, options = {}) {
-	/* istanbul ignore if */
-  if (install.installed) {return;}
-	components.map((component) => {
+  /* istanbul ignore if */
+  if (install.installed) { return; }
+  components.map((component) => {
     Vue.component(component.name, component);
   });
 };
@@ -22,9 +25,9 @@ if (typeof window !== "undefined" && window.Vue) {
 }
 
 export default {
-	version: "2.0.12",
+  version: "2.0.12",
   install,
   XtInputNumber,
-	XtTable,
+  XtTable,
   XtTableColumn
 };
